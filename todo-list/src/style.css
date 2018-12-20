@@ -1,0 +1,69 @@
+.todo-list {
+    width: 250px;
+    margin: 20px auto;
+}
+
+ul, input, button, h2 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 14px;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 40px;
+    border-style: groove;
+    border-right: 0;
+    outline: 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.input-box {
+    height: 40px;
+}
+
+button {
+    height: 40px;
+}
+
+.add-btn {
+    padding: 0 10px;
+    float: left;
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+.todo-list-item {
+    margin-top: 16px;
+}
+
+.removed-item {
+    float: right;
+}
+
+.completed-show {
+    color: #999;
+}
+
+.tag {
+    float: right;
+    width: 18px;
+    height: 18px;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 8px;
+    text-align: center;
+    color: #fff;
+    background: rgba(150, 5, 5, 0.3);
+    border-radius: 50%;
+}
