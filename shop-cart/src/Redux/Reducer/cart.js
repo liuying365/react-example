@@ -1,6 +1,6 @@
-import { ADD_CART, REMOVE_CART, CLEAR_CART } from '../Action/cart.js'
+import { ADD_CART, REMOVE_CART, CLEAR_CART, GET_CART_LIST } from '../Action/cart.js'
 
-const cart = {
+const cartInit = {
     cartList: []
 };
 
@@ -29,7 +29,7 @@ const removeListHandler = (state, payload) => {
     let list = [...state.cartList]
     let i = null;
     list.forEach((item, index) => {
-        if (item.id === payload.id) {
+        if (item.id === payload) {
             i = index
         }
     })
@@ -37,7 +37,7 @@ const removeListHandler = (state, payload) => {
     return list
 }
 
-export default (state = cart, action) => {
+export default (state = cartInit, action) => {
     let {type, payload} = action
     switch(type) {
         case ADD_CART:
@@ -48,6 +48,8 @@ export default (state = cart, action) => {
             return {...state, cartList: rmList}
         case CLEAR_CART: 
             return {...state, cartList: []}
+        case GET_CART_LIST: 
+            return {...state, cartList: payload}
         default:
             return state
     }

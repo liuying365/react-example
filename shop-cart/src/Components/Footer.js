@@ -7,7 +7,6 @@ class Footer extends Component {
         let { clearCart, cartList }  = this.props
         let num = 0;
         let price = 0;
-        console.log(cartList)
         cartList.forEach(element => {
             num += element.num
             price += element.total_price

@@ -5,6 +5,8 @@ import { store } from './Redux/Store'
 import App from './Components/App';
 import './style.css';
 
+require('./mock/mock.js')
+
 store.subscribe(() => {
     console.log(store.getState());
 })

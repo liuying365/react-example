@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Table, Button } from 'antd'
-import { removeCart } from '../Redux/Action/cart'
+import { removeCart, getCartList } from '../Redux/Action/cart'
 
 class Cart extends Component {
+    componentWillMount() {
+        this.props.getCartList();
+    }
     render() {
         let { data, removeCart } = this.props;
         const columns = [
@@ -57,7 +60,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-    removeCart
+    removeCart,
+    getCartList
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

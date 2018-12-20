@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Table, Button } from 'antd'
 import { addCart } from '../Redux/Action/cart'
+import { getProductList } from '../Redux/Action/product'
 
 class Product extends Component {
+    componentWillMount() {
+        this.props.getProductList()
+    }
     render() {    
         let { addCart } = this.props;
         const columns = [
@@ -52,6 +56,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps =  {
     addCart,
+    getProductList
 }
 
 

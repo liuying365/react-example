@@ -1,28 +1,15 @@
-const product = {
-    productList: [
-        {
-            id: 11,
-            name: '香辣虾',
-            price: 80
-        },
-        {
-            id: 25,
-            name: '涮羊肉',
-            price: 80
-        },
-        {
-            id: 33,
-            name: '红烧肉',
-            price: 50
-        },
-        {
-            id: 12,
-            name: '梅菜扣肉',
-            price: 30
-        }
-    ]
+import { GET_PRODUCT_LIST } from '../Action/product';
+
+const productInit = {
+    productList: []
 }
 
-export default (state = product, active) => {
-    return state
+export default (state = productInit, action) => {
+    let { type, data } = action;
+    switch(type){
+        case GET_PRODUCT_LIST:
+            return {...state, productList: data};
+        default:
+            return state
+    }
 }
